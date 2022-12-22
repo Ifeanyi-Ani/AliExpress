@@ -1,0 +1,156 @@
+.cart {
+  background-color: #f2f2f2;
+}
+.cart .header .search-wrapper input {
+  width: 95%;
+}
+.shopping-cart {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+}
+.shopping-cart .col1 {
+  width: 70%;
+}
+.shopping-cart .col2 {
+  width: 25%;
+}
+.shopping-cart .section {
+  background-color: #fff;
+  padding: 20px;
+}
+.shopping-cart .flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.shopping-cart .cardbox {
+  margin-top: 20px;
+}
+.shopping-cart .cardbox .bord {
+  padding-bottom: 10px;
+  border-bottom: 1px solid gainsboro;
+}
+.shopping-cart .cardbox .card-wrap {
+  display: flex;
+}
+.shopping-cart h2 {
+  font-weight: 700;
+  font-size: 25px;
+  color: #222;
+  margin-bottom: 10px;
+}
+.shopping-cart label {
+  margin-left: 5px;
+  line-height: 24px;
+  color: #222;
+}
+.card-wrap h5 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.card-wrap .btn-cl {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-cl svg,
+.card-wrap h5,
+.shopping-cart label,
+.shopping-cart input {
+  cursor: pointer;
+}
+.btn-cl svg:hover,
+.card-wrap h5:hover,
+.cardbox label:hover {
+  color: #ff472e;
+}
+.shopping-cart button:not(.space-up button) {
+  background-color: #fff;
+  border: none;
+  font-weight: 700;
+  color: #191919;
+  cursor: pointer;
+}
+.space-up button {
+  cursor: pointer;
+}
+.shopping-cart .cardbox .bord button {
+  color: #ff472e;
+}
+
+.card-wrap .col1 {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.card-wrap .col1 .img-con {
+  width: 90%;
+  height: 100px;
+  text-align: center;
+}
+.card-wrap .col1 .img-con img {
+  width: 70%;
+  height: 100%;
+}
+.card-wrap .card {
+  width: 80%;
+}
+.space-up {
+  margin-top: 20px;
+}
+.space-up span {
+  color: #757575;
+}
+.summary-list {
+  width: 100%;
+  margin: auto;
+  background-color: #fff;
+  padding: 5px 20px;
+}
+.summary-list .total {
+  font-weight: 700;
+}
+.summary-list button {
+  /* display: block; */
+  width: 100%;
+  padding: 5px;
+  border-radius: 50px;
+  margin: 20px auto;
+  background-color: #ff472e !important;
+  color: #fff !important;
+}
+.payment {
+  margin-top: 10px;
+  padding: 5px 20px;
+  background-color: #fff;
+}
+.payment .top {
+  padding-bottom: 10px;
+  border-bottom: 1px solid gainsboro;
+}
+.payment img {
+  width: 30px;
+  height: 20px;
+  margin-right: 10px;
+}
+.payment h3 {
+  font-size: 16;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+.payment span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+.payment span svg {
+  font-size: 20px;
+}

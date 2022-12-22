@@ -1,0 +1,89 @@
+nav {
+  background-color: #fafafa;
+  color: #333;
+  padding-right: 30px;
+}
+nav .nav-links {
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  align-items: center;
+  gap: 5px;
+  /* position: relative; */
+}
+nav .nav-links li {
+  list-style-type: none;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 5px 15px;
+  cursor: pointer;
+  position: relative;
+}
+nav .nav-links li:hover {
+  color: #ff4747;
+}
+nav .nav-links li .mega-menu {
+  display: none;
+  position: absolute;
+  z-index: 22;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.08);
+  padding-top: 10px;
+  width: max-content;
+}
+
+nav .nav-links li .mega-menu:nth-child(3),
+nav .nav-links li .mega-menu:nth-child(4) {
+  left: unset;
+  right: 0;
+  width: 300px;
+}
+nav .nav-links .drop-down:hover {
+  background-color: white;
+  box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.08);
+}
+nav .nav-links .drop-down:hover .mega-menu {
+  display: block;
+}
+nav .nav-links li .mega-menu li,
+.nav-links li .mega-menu form label,
+.nav-links li .mega-menu span {
+  color: #2a2a2a;
+  padding: 10px;
+}
+nav .nav-links li .mega-menu li:hover {
+  background-color: #fafafa;
+}
+nav .nav-links li span {
+  vertical-align: middle;
+}
+nav .nav-links li span img {
+  width: 40px;
+  height: 20px;
+}
+nav .nav-links .bdr-rght {
+  border-right: 1px solid #2a2a2a;
+}
+nav .nav-links li .mega-menu form label {
+  display: block;
+  font-weight: 500;
+}
+nav .nav-links li .mega-menu form select {
+  width: 95%;
+  display: block;
+  margin: auto;
+  height: 32px;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+nav .nav-links li .mega-menu form button {
+  display: block;
+  background-color: #ff4747;
+  color: white;
+  width: 95%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  margin: 20px auto;
+}

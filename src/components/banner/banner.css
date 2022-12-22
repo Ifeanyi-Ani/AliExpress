@@ -1,0 +1,11 @@
+.banner {
+  background-image: url("../../images/banner.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 46%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}

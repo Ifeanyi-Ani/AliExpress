@@ -1,0 +1,12 @@
+.btn button {
+  padding: 5px 10px;
+  border-radius: 25px;
+  border: none;
+  background-color: #f2f2f2;
+}
+.btn input {
+  border: none;
+  outline: none;
+  width: 30px;
+  text-align: end;
+}

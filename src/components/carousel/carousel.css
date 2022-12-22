@@ -1,0 +1,11 @@
+.carousa {
+  width: 60%;
+  overflow: hidden;
+  /* gap: 10px;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: nowrap; */
+}
+.carousa .card {
+  width: 25%;
+}

@@ -1,0 +1,42 @@
+footer {
+  background-color: #f2f2f2;
+  padding-top: 30px;
+}
+footer .top {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: auto;
+  padding-bottom: 30px;
+}
+footer .top div {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #999999;
+}
+footer .top h5 {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 10px;
+}
+footer .top span {
+  cursor: pointer;
+}
+footer .top span:hover {
+  color: #ff9900;
+}
+footer .bottom {
+  background-color: #333;
+  padding: 10px 0;
+}
+footer .bottom div {
+  width: 90%;
+  margin: auto;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9e9e9e;
+}

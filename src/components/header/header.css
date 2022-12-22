@@ -1,0 +1,67 @@
+.header {
+  background-color: #fff;
+  padding: 20px 0;
+}
+.header .inner {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.header .inner .col {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+.header .inner .col2 {
+  width: 60%;
+}
+.header .inner .col3 {
+  width: 20%;
+}
+
+.header .inner .col2 .search-wrapper {
+  display: flex;
+  border: 2px solid #ff472e;
+  border-radius: 5px;
+  height: 40px;
+}
+.search-wrapper input {
+  width: 62%;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+}
+.search-wrapper select {
+  width: 30%;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  border-left: 1px solid gainsboro;
+  cursor: pointer;
+}
+.search-wrapper button {
+  width: 8%;
+  border: none;
+  outline: none;
+  background-color: #ff472e;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+.header .col2 ul {
+  display: flex;
+  width: max-content;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+.header .col2 ul li {
+  cursor: pointer;
+  padding: 0 3px;
+  border-right: 1px solid gainsboro;
+}
+.header .col2 ul li:hover {
+  color: #ff472e;
+}

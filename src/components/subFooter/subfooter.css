@@ -1,0 +1,58 @@
+.footer {
+  background-color: #fff;
+  padding-bottom: 30px;
+}
+.footer .links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background-color: #f2f2f2;
+  padding: 20px 0;
+}
+.footer ul li {
+  list-style-type: none;
+}
+.footer .links li:not(:nth-child(1)) {
+  cursor: pointer;
+}
+.footer .top {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 1px solid gainsboro;
+}
+.footer .top svg {
+  font-size: 40px;
+}
+.footer .top p,
+.footer .bottom li {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+}
+.footer h5 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #333333;
+  padding: 20px 0;
+}
+.footer .bottom {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  gap: 50px;
+}
+.footer .bottom .col {
+  width: 30%;
+}
+.footer .bottom .col2 {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer .bottom li {
+  cursor: pointer;
+}

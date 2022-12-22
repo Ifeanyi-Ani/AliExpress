@@ -1,0 +1,25 @@
+.cart-count a {
+  font-size: 40px;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+}
+.cart-count a::after {
+  content: attr(data-cart);
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #ff472e;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  color: white;
+  font-size: 12px;
+  height: 7px;
+  width: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-count .col3 a:hover {
+  color: #ff472e;
+}

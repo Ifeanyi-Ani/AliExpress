@@ -1,0 +1,49 @@
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 30px;
+  width: 40%;
+  background-color: #fff;
+}
+.modal .button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+  color: #999;
+  font-weight: 400;
+}
+.modal .button svg {
+  cursor: pointer;
+}
+.modal .navigate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.modal .navigate button {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #222;
+  border: none;
+}
+.modal .navigate button.active {
+  font-weight: 700;
+  border-bottom: 2px solid #ff472e;
+}

@@ -1,0 +1,24 @@
+.flex-btn {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.flex-btn button {
+  width: 45%;
+  border-radius: 5px;
+  border: none;
+  height: 32px;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* .flex-btn button:nth-child(1) {
+  background-color: #ff4747;
+  color: #fff;
+}
+.flex-btn button:nth-child(2) {
+  color: #ff4747;
+  background-color: #fff1f1;
+} */
