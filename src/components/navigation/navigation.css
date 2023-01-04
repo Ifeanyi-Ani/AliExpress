@@ -87,3 +87,21 @@ nav .nav-links li .mega-menu form button {
   border-radius: 5px;
   margin: 20px auto;
 }
+.logout {
+  display: block;
+  background-color: #fff1f1;
+  border: 1px solid #ff4747;
+  color: #ff4747;
+  padding: 2px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.loggedCon {
+  padding: 0 10px;
+}
+.loggedCon .logged {
+  padding: unset !important;
+  font-weight: 700;
+  color: #555 !important;
+  display: block;
+}

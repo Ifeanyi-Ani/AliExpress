@@ -8,4 +8,27 @@
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  padding: 0 10px;
+}
+.banner .col1 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #fff;
+}
+.banner h4 {
+  font-weight: 700;
+  font-size: 16px;
+}
+.banner .col1 span {
+  display: block;
+  margin-bottom: 50px;
+}
+.banner .amt {
+  background-color: #ffe7e9;
+  color: #000;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
 }

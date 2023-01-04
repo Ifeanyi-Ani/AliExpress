@@ -3,17 +3,16 @@ import ReactDOM from 'react-dom';
 import { IoClose } from 'react-icons/io5';
 import './modal.css';
 
-export const Modal = ({ open, children, close, handleLogin, handleSignup, active }) => {
+export const Modal = ({ open, children, close, handleState1, handleState2, active, title1, title2 }) => {
     if (!open) return null
 
-    console.log(active);
     return ReactDOM.createPortal(
         <div className="overlay">
             <div className='modal'>
                 <div className='button'><IoClose onClick={close} role="button" /></div>
                 <div className='navigate'>
-                    <button className={`${active === 2 ? 'active' : " "} `} onClick={handleSignup}>Register</button>
-                    <button className={`${active === 1 ? 'active' : " "}`} onClick={handleLogin}>Sign in</button>
+                    <button className={`${active === 2 ? 'active' : " "} `} onClick={handleState1}>{title1}</button>
+                    <button className={`${active === 1 ? 'active' : " "}`} onClick={handleState2}>{title2}</button>
                 </div>
                 {children}
             </div>
@@ -22,3 +21,4 @@ export const Modal = ({ open, children, close, handleLogin, handleSignup, active
         document.getElementById('portal')
     )
 }
+export default Modal

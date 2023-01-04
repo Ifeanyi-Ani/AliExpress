@@ -1,0 +1,9 @@
+.flex-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.flex-line .hr {
+  width: 30%;
+}

@@ -12,8 +12,18 @@ import { CartpageLink } from '../../components/cartpage-link/CartpageLink';
 import { IoSearch, } from 'react-icons/io5';
 
 import './cartview.css';
+import { useContext } from 'react';
+import { ContextData } from '../../context/ContextData';
+import { useState } from 'react';
+import Modal from '../../components/modal/Modal';
 
 const CartView = () => {
+    const { cart, increaseCartQty, decreaseCartQty, deleteCartItem, GrandTotalPrice } = useContext(ContextData);
+    const [openModal, setopenModal] = useState(false);
+    const handleDeleteCart = (item) => {
+        deleteCartItem(item);
+        setopenModal(false)
+    }
     return (
         <div className='cart'>
             <div className='header'>
@@ -34,8 +44,8 @@ const CartView = () => {
             </div>
             <div className="shopping-cart">
                 <div className="col1">
-                    <div className='section'>
-                        <h2>Shopping Cart (6)</h2>
+                    <div className='section' >
+                        <h2>Shopping Cart ({cart.length})</h2>
                         <div className="flex">
                             <div className="col">
                                 <input type="checkbox" name="" id="items" />
@@ -47,49 +57,70 @@ const CartView = () => {
                         </div>
                     </div>
 
-                    <div className="cardbox section">
-                        <div className="flex bord">
-                            <div className="col"><input type="checkbox" name="" id="item1" />
-                                <label htmlFor="item1">Bigent Men Clothing Store</label>
-                            </div>
-                            <div className="col">
-                                <button>Get discount</button>
-                            </div>
-                        </div>
-                        <div className="card-wrap">
-                            <div className="col1">
-                                <input type="checkbox" name="" id="" />
-                                <div className='img-con'><img src={product1} alt="img" /></div>
-                            </div>
-                            <div className="card">
-                                <div className="flex">
-                                    <div className="col">
-                                        <h5>Men's Summer Street Trend T-shirt Pirate Anchor Print T-shirt Casual Black </h5>
-                                    </div>
-                                    <div className="col btn-cl">
-                                        <span><IoHeartOutline /></span>
-                                        <button><IoTrashOutline /></button>
-                                    </div>
+
+                    {cart.map((data, index) => (
+                        <div className="cardbox section" key={index}>
+                            <div className="flex bord">
+                                <div className="col"><input type="checkbox" name="" id="item1" />
+                                    <label htmlFor="item1">{data.name}</label>
                                 </div>
-                                <div className="flex space-up">
-                                    <div className="col">
-                                        <h4>US $4</h4>
-                                        <span>+ Shipping fee US $2.62</span>
-                                    </div>
-                                    <div className="col">
-                                        <QuantityBtn />
-                                    </div>
+                                <div className="col">
+                                    <button>Get discount</button>
                                 </div>
                             </div>
+                            <div className="card-wrap">
+                                <div className="col1">
+                                    <input type="checkbox" name="" id="" />
+                                    <div className='img-con'><img src={`http://159.65.21.42:9000${data.image}`} alt="img" /></div>
+                                </div>
+                                <div className="card">
+                                    <div className="flex">
+                                        <div className="col">
+                                            <h5>{data.description}</h5>
+                                        </div>
+                                        <div className="col btn-cl">
+                                            <span><IoHeartOutline /></span>
+                                            <button onClick={() => setopenModal(true)}><IoTrashOutline /></button>
+                                        </div>
+                                        <Modal
+                                            open={openModal}
+                                            close={() => setopenModal(false)}
+                                            className="open-modal"
+                                        >
+                                            <div className='cart-msg xenter'>
+                                                <h4>Remove Product</h4>
+                                                <span>Remove item form cart</span>
+                                                <div className="ctrbtn">
+                                                    <button onClick={() => handleDeleteCart(data)}>Remove</button>
+                                                    <button onClick={() => setopenModal(false)}>Cancel</button>
+                                                </div>
+
+                                            </div>
+                                        </Modal>
+                                    </div>
+                                    <div className="flex space-up">
+                                        <div className="col">
+                                            <h4>NGN {data.price}</h4>
+                                            <span>+ Shipping fee US $2.62</span>
+                                        </div>
+                                        <div className="col">
+                                            <QuantityBtn count={data.order_quantity}
+                                                increase={() => increaseCartQty(data)}
+                                                decrease={() => decreaseCartQty(data)} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    ))}
+
                 </div>
                 <div className="col2">
                     <div className="summary-list">
                         <h2>Summary</h2>
                         <div className="flex">
                             <div className="col">Subtotal</div>
-                            <div className="col">US $67.50</div>
+                            <div className="col">NGN {GrandTotalPrice}</div>
                         </div>
                         <div className="flex">
                             <div className="col">Shipping fee</div>
@@ -97,10 +128,10 @@ const CartView = () => {
                         </div>
                         <div className="flex total">
                             <div className="col">Total</div>
-                            <div className="col">Us $101</div>
+                            <div className="col">NGN {GrandTotalPrice}</div>
                         </div>
                         <div>
-                            <button>Checkout (4)</button>
+                            <button>Checkout ({cart.length})</button>
                         </div>
                     </div>
 

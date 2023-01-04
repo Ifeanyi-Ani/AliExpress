@@ -20,9 +20,39 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  text-decoration: none;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.8);
 }
-
+.actionBx {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+.deleteBx {
+  background-color: unset;
+  cursor: pointer;
+  border: none;
+  color: #333;
+}
+.editBx {
+  background-color: unset;
+  cursor: pointer;
+  border: none;
+  color: #333;
+}
+.actionBx svg:hover {
+  color: #fff;
+}
+.imgBx {
+  width: 100%;
+  height: 100%;
+}
+.imgBx img {
+  width: 100%;
+  height: 300px;
+}
 .cardBox .card .numbers {
   position: relative;
   font-weight: 500;
@@ -33,6 +63,9 @@
   color: #999;
   font-size: 1.1rem;
   margin-top: 5px;
+}
+.cardBox .card .infoBx {
+  display: block;
 }
 
 .cardBox .card .iconBx {
@@ -48,16 +81,17 @@
 .cardBox .card:hover .iconBx {
   color: #fff;
 }
-.details {
+.dashDtx {
   width: 100%;
   padding: 20px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 30px;
+  align-items: flex-start;
   /* margin-top: 10px; */
 }
 
-.details .recentOrders {
+.dashDtx .recentOrders {
   display: grid;
   background: #fff;
   padding: 20px;
@@ -65,7 +99,7 @@
   border-radius: 20px;
 }
 
-.details .cardHeader {
+.dashDtx .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -82,35 +116,35 @@
   border-radius: 6px;
 }
 
-.details table {
+.dashDtx table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
 }
-.details table thead td {
+.dashDtx table thead td {
   font-weight: 600;
 }
-.details .recentOrders table tr {
+.dashDtx .recentOrders table tr {
   color: #333;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.details .recentOrders table tr:last-child {
+.dashDtx .recentOrders table tr:last-child {
   border-bottom: none;
 }
-.details .recentOrders table tbody tr:hover {
+.dashDtx .recentOrders table tbody tr:hover {
   background: #ff472e;
   color: #fff;
 }
-.details .recentOrders table tr td {
+.dashDtx .recentOrders table tr td {
   padding: 10px;
 }
-.details .recentOrders table tr td:last-child {
+.dashDtx .recentOrders table tr td:last-child {
   text-align: end;
 }
-.details .recentOrders table tr td:nth-child(2) {
+.dashDtx .recentOrders table tr td:nth-child(2) {
   text-align: end;
 }
-.details .recentOrders table tr td:nth-child(3) {
+.dashDtx .recentOrders table tr td:nth-child(3) {
   text-align: center;
 }
 
@@ -121,21 +155,7 @@
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
-.recentCustomers .imgBx {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  overflow: hidden;
-}
-.recentCustomers .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
 .recentCustomers table tr td {
   padding: 12px 10px;
 }
@@ -154,4 +174,7 @@
 }
 .recentCustomers table tr:hover td h4 span {
   color: #fff;
+}
+.prodControl .card {
+  cursor: text;
 }

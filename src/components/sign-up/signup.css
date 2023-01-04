@@ -1,12 +1,16 @@
-.sign-up {
+.sign-up,
+.prod-form {
   width: 80%;
   margin: auto;
 }
-.sign-up .form-group {
+.sign-up .form-group,
+.prod-form .form-group {
   margin-bottom: 30px;
 }
 .sign-up input,
-.sign-up select {
+.sign-up select,
+.prod-form input,
+.prod-form select {
   display: block;
   width: 100%;
   height: 50px;
@@ -14,13 +18,18 @@
   border: 2px solid gainsboro;
   border-radius: 5px;
 }
-.sign-up a {
+.prod-form textarea {
+  width: 100%;
+}
+.sign-up a,
+.prod-form a {
   font-size: 14px;
   line-height: 24px;
   color: #999;
   text-decoration: none;
 }
-.sign-up button {
+.sign-up button,
+.prod-form button {
   width: 100%;
   background: linear-gradient(to right, #ff610d, #ff3201);
   color: #fff;

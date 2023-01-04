@@ -6,15 +6,21 @@ import acc from "../../images/accc.webp"
 import { RegSignin } from "../../components/reg_signin/Reg_Signin";
 import miniCarousel1 from "../../images/miniCarousel1.webp";
 import miniCarousel2 from "../../images/miniCarousel2.webp";
+import superD from '../../images/superD.webp'
 import { Banner } from "../../components/banner/Banner";
 import { SubFooter } from "../../components/subFooter/SubFooter";
 import { Link } from "react-router-dom";
 import { Header } from "../../components/header/Header";
+import { IoReaderOutline, IoChatboxEllipsesOutline } from 'react-icons/io5'
 
+import BreakSection from "../../components/sign-with/BreakSection";
+import { useContext } from "react";
+import { ContextData } from "../../context/ContextData";
 
 import "./home.css";
 function Homepage() {
-    let bgcl1 = "#ff4747", cl1 = "#fff", rd = "10px", bgcl2 = "#fff1f1", cl2 = "#ff4747"
+    const { isLoggedin, loggedUser } = useContext(ContextData)
+    let bgcl1 = "linear-gradient(to right, #ff0e0b, #ff7137)", cl1 = "#fff", rd = "20px", bgcl2 = "#f5f5f5", cl2 = "#333"
     return (
         <div className="home-container">
             <Header />
@@ -1095,9 +1101,29 @@ function Homepage() {
                 <div className="account">
                     <div className="bg-img">
                         <img src={acc} alt="account" />
-                        <h4>Welcome to AliExpress</h4>
+
                     </div>
-                    <RegSignin bgcl1={bgcl1} cl1={cl1} rd={rd} bgcl2={bgcl2} cl2={cl2} />
+                    {isLoggedin ? (<div>
+                        <h4>{`${loggedUser[0].name}`}</h4>
+                        <div className="d-flex">
+                            <div className="col">
+                                <img src={acc} alt="account" /><br />
+                                <span>Accounts</span>
+                            </div>
+                            <div className="col">
+                                <IoReaderOutline />
+                                <span>orders</span>
+                            </div>
+                            <div className="col">
+                                <IoChatboxEllipsesOutline />
+                                <span>message</span>
+                            </div>
+                        </div>
+                    </div>) : (<div>
+                        <h4>Welcome to AliExpress</h4>
+                        <RegSignin bgcl1={bgcl1} cl1={cl1} rd={rd} bgcl2={bgcl2} cl2={cl2} />
+
+                    </div>)}
                     <div className="inner-acc">
                         <span>Exclusive offers</span>
                         <h4>Just for new AliExpress <br /> members</h4>
@@ -1113,7 +1139,74 @@ function Homepage() {
                         </div>
                     </div>
                 </div>
-                <div className="main">main</div>
+                <div className="main">
+                    <Link className="superD">
+                        <div className="top">
+                            <div className="col">
+                                <img src={superD} alt="img" />
+                                <span>Top Products. Incredible prices</span>
+                                <div className="timer">
+                                    <span>16</span> : <span>33</span> : <span>20</span>
+                                </div>
+                            </div>
+                            <div className="col">View more</div>
+
+                        </div>
+                        <div className="content">
+                            <div className="box">
+                                <div className="img">
+                                    <img src={miniCarousel1} alt="img" />
+                                </div>
+                                <h5>NGN 4,777</h5>
+                                <span>70352 quantity</span>
+                            </div>
+                            <div className="box">
+                                <div className="img">
+                                    <img src={miniCarousel1} alt="img" />
+                                </div>
+                                <h5>NGN 4,777</h5>
+                                <span>70352 quantity</span>
+                            </div>
+                            <div className="box">
+                                <div className="img">
+                                    <img src={miniCarousel1} alt="img" />
+                                </div>
+                                <h5>NGN 4,777</h5>
+                                <span>70352 quantity</span>
+                            </div>
+                            <div className="box">
+                                <div className="img">
+                                    <img src={miniCarousel1} alt="img" />
+                                </div>
+                                <h5>NGN 4,777</h5>
+                                <span>70352 quantity</span>
+                            </div>
+                            <div className="box">
+                                <div className="img">
+                                    <img src={miniCarousel1} alt="img" />
+                                </div>
+                                <h5>NGN 4,777</h5>
+                                <span>70352 quantity</span>
+                            </div>
+                            <div className="box">
+                                <div className="img">
+                                    <img src={miniCarousel1} alt="img" />
+                                </div>
+                                <h5>NGN 4,777</h5>
+                                <span>70352 quantity</span>
+                            </div>
+                        </div>
+                    </Link>
+
+                    <div className="break">
+                        <BreakSection text="Feature Categories" />
+                    </div>
+                    <div className="sec">
+                        <div className="col1">
+                            <img src={miniCarousel2} alt="img" />
+                        </div>
+                    </div>
+                </div>
 
             </div>
 

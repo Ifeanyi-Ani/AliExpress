@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { SignIn } from '../signin/SignIn';
 import SignUp from '../sign-up/SignUp';
 import { Modal } from '../modal/Modal'
 import { useState } from 'react';
+import { ContextData } from '../../context/ContextData';
 import './reg_signin.css';
 
 export const RegSignin = ({ bgcl1, cl1, bgcl2, cl2, rd }) => {
-    const [openModal, setopenModal] = useState(false);
+    const { openModal, setopenModal } = useContext(ContextData)
     const [active, setActive] = useState(1);
     const [login, setLogin] = useState(false);
     const [signup, setSignup] = useState(false);
     const btn1Style = {
-        backgroundColor: bgcl1,
+        background: bgcl1,
         color: cl1,
         borderRadius: rd
     }
@@ -41,9 +42,11 @@ export const RegSignin = ({ bgcl1, cl1, bgcl2, cl2, rd }) => {
                 open={openModal}
                 active={active}
                 close={() => setopenModal(false)}
-                handleLogin={() => handleLogin(1)}
-                handleSignup={() => handleSignup(2)}
-                className="open-modal">
+                handleState2={() => handleLogin(1)}
+                handleState1={() => handleSignup(2)}
+                className="open-modal"
+                title1="Register"
+                title2="Sign in">
                 {login && (<SignIn />)}
                 {signup && (<SignUp />)}
             </Modal>

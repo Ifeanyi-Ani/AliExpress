@@ -1,211 +1,96 @@
 import React from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-
+import { ContextData } from '../../context/ContextData'
 import './dashbord.css'
 
 const Dashboard = () => {
+    const { user, product, cart } = useContext(ContextData)
+
     return (
         <div className="main">
             <div className="cardBox">
-                <div className="card">
+                <Link to="/admin/product" className="card">
                     <div>
-                        <div className="numbers">1,504</div>
-                        <div className="cardName">Daily Views</div>
+                        <div className="numbers">{product.length}</div>
+                        <div className="cardName">Products</div>
                     </div>
 
                     <div className="iconBx">
                         {/* <ion-icon name="eye-outline"></ion-icon> */}
                     </div>
-                </div>
+                </Link>
 
-                <div className="card">
+                <Link to="/admin/user" className="card">
                     <div>
-                        <div className="numbers">80</div>
-                        <div className="cardName">Sales</div>
+                        <div className="numbers">{user.length}</div>
+                        <div className="cardName">Users</div>
                     </div>
 
                     <div className="iconBx">
                         {/* <ion-icon name="cart-outline"></ion-icon> */}
                     </div>
-                </div>
+                </Link>
 
                 <div className="card">
                     <div>
-                        <div className="numbers">284</div>
-                        <div className="cardName">Comments</div>
+                        <div className="numbers">{cart.length}</div>
+                        <div className="cardName">Cart</div>
                     </div>
 
                     <div className="iconBx">
                         {/* <ion-icon name="chatbubbles-outline"></ion-icon> */}
                     </div>
                 </div>
-
-                <div className="card">
-                    <div>
-                        <div className="numbers">$7,842</div>
-                        <div className="cardName">Earning</div>
-                    </div>
-
-                    <div className="iconBx">
-                        {/* <ion-icon name="cash-outline"></ion-icon> */}
-                    </div>
-                </div>
             </div>
 
-            <div className="details">
+            <div className="dashDtx">
                 <div className="recentOrders">
                     <div className="cardHeader">
-                        <h2>Recent Orders</h2>
-                        <Link className="btn">View All</Link>
+                        <h2>Recent Products</h2>
+                        <Link to="/admin/product" className="btn">View All</Link>
                     </div>
 
                     <table>
                         <thead>
                             <tr>
-                                <td>Name</td>
+                                <td>Description</td>
                                 <td>Price</td>
-                                <td>Payment</td>
-                                <td>Status</td>
+                                <td>In store</td>
+                                <td>Name</td>
                             </tr>
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span className="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Dell Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span className="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span className="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Addidas Shoes</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span className="status inProgress">In Progress</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span className="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Dell Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span className="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span className="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Addidas Shoes</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span className="status inProgress">In Progress</span></td>
-                            </tr>
+                            {product.length ? [...product].reverse().slice(0, 10).map((data, idx) => (
+                                <tr key={idx}>
+                                    <td>{data.description}</td>
+                                    <td>${data.price}</td>
+                                    <td>{data.quantity}units</td>
+                                    <td>{data.name}</td>
+                                </tr>
+                            )) : (<tr><td>Product is Empty</td></tr>)
+                            }
                         </tbody>
                     </table>
                 </div>
 
                 <div className="recentCustomers">
                     <div className="cardHeader">
-                        <h2>Recent Customers</h2>
+                        <h2>Recent Users</h2>
                     </div>
 
                     <table>
-                        <tr>
-                            <td >
-                                {/* <div className="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div> */}
-                            </td>
-                            <td>
-                                <h4>David <br /> <span>Italy</span></h4>
-                            </td>
-                        </tr>
+                        <tbody>
+                            {user.length ? [...user].reverse().slice(0, 10).map((data, idx) => (
+                                <tr key={idx}>
 
-                        <tr>
-                            <td >
-                                {/* <div className="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div> */}
-                            </td>
-                            <td>
-                                <h4>Amit <br /> <span>India</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td >
-                                {/* <div className="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div> */}
-                            </td>
-                            <td>
-                                <h4>David <br /> <span>Italy</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td >
-                                {/* <div className="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div> */}
-                            </td>
-                            <td>
-                                <h4>Amit <br /> <span>India</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td >
-                                {/* <div className="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div> */}
-                            </td>
-                            <td>
-                                <h4>David <br /> <span>Italy</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td >
-                                {/* <div className="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div> */}
-                            </td>
-                            <td>
-                                <h4>Amit <br /> <span>India</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td >
-                                {/* <div className="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div> */}
-                            </td>
-                            <td>
-                                <h4>David <br /> <span>Italy</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td >
-                                {/* <div className="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div> */}
-                            </td>
-                            <td>
-                                <h4>Amit <br /> <span>India</span></h4>
-                            </td>
-                        </tr>
+                                    <td>
+                                        <h4>{data.name} <br /> <span>{data.email}</span></h4>
+                                    </td>
+                                </tr>
+                            )) : (<tr><td>user list is empty</td></tr>)}
+                        </tbody>
                     </table>
                 </div>
             </div>

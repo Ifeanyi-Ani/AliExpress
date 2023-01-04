@@ -2,6 +2,8 @@ import React from 'react';
 import { IoChevronForwardOutline, IoChevronBackOutline, IoReorderThreeOutline, IoGridOutline, } from 'react-icons/io5';
 import { TiStarFullOutline, TiStarOutline } from 'react-icons/ti';
 // import CardProd from '../../components/card-prod/CardProd';
+import { useContext } from 'react';
+import { ContextData } from '../../context/ContextData';
 import product1 from '../../images/product1.webp';
 import { HomepageLink } from '../../components/homepage-link/HomepageLink';
 import { CartpageLink } from '../../components/cartpage-link/CartpageLink';
@@ -11,6 +13,7 @@ import { useState } from 'react';
 import './productpage.css';
 
 const ProductPage = () => {
+    const { product } = useContext(ContextData);
     const [toggle, setToggle] = useState(1);
     const handleState = (index) => {
         setToggle(index);
@@ -123,9 +126,9 @@ const ProductPage = () => {
                                 <div className="col space">
                                     <span>Sort by:</span>
                                     <div className='type'>
-                                        <input type="text" name="" id="" value="Best Match" />
-                                        <input type="text" name="" id="" value="Orders" />
-                                        <input type="text" name="" id="" value="Price" />
+                                        <input type="button" name="" id="" value="Best Match" />
+                                        <input type="button" name="" id="" value="Orders" />
+                                        <input type="button" name="" id="" value="Price" />
                                     </div>
                                 </div>
                                 <div className="col space">
@@ -145,90 +148,23 @@ const ProductPage = () => {
 
                     </div>
                     <div className={`prod ${toggle === 1 ? 'prod-grid' : 'prod-flex'}`}>
-                        <Link to="/product/2" className="prod-card">
-                            <div className="img-con">
-                                <img src={product1} alt="products" />
-                            </div>
-                            <div className="content">
-                                <div className="wrapper">
-                                    <div className="amt"><span>NGN</span>2,018</div>
-                                    <div className="txt"><h5>Fashion T-shirt Men's Classic Color... Fashion T-shirt Men's Classic Color... Fashion T-shirt Men's Classic Color...</h5></div>
-                                </div>
-                                <span className='cl'>Free Shipping</span>
 
-                                <div className='pos-bottom'>Store</div>
-                            </div>
-                        </Link>
-                        <div className="prod-card">
-                            <div className="img-con">
-                                <img src={product1} alt="products" />
-                            </div>
-                            <div className="content">
-                                <div className="wrapper">
-                                    <div className="amt"><span>NGN</span>2,018</div>
-                                    <div className="txt"><h5>Fashion T-shirt Men's Classic Color...</h5></div>
+                        {product.length ? [...product].reverse().map((data, idx) => (
+                            <Link to={`/product/${data._id}`} className="prod-card" key={idx}>
+                                <div className="img-con">
+                                    <img src={`http://159.65.21.42:9000${data.image}`} alt="products" />
                                 </div>
-                                <span className='cl'>Free Shipping</span>
+                                <div className="content">
+                                    <div className="wrapper">
+                                        <div className="amt"><span>NGN</span>{data.price}</div>
+                                        <div className="txt"><h5>{data.description}</h5></div>
+                                    </div>
+                                    <span className='cl'>Free Shipping</span>
 
-                                <div className='pos-bottom'>Store</div>
-                            </div>
-                        </div>
-                        <div className="prod-card">
-                            <div className="img-con">
-                                <img src={product1} alt="products" />
-                            </div>
-                            <div className="content">
-                                <div className="wrapper">
-                                    <div className="amt"><span>NGN</span>2,018</div>
-                                    <div className="txt"><h5>Fashion T-shirt Men's Classic Color...</h5></div>
+                                    <div className='pos-bottom'>Store</div>
                                 </div>
-                                <span className='cl'>Free Shipping</span>
-
-                                <div className='pos-bottom'>Store</div>
-                            </div>
-                        </div>
-                        <div className="prod-card">
-                            <div className="img-con">
-                                <img src={product1} alt="products" />
-                            </div>
-                            <div className="content">
-                                <div className="wrapper">
-                                    <div className="amt"><span>NGN</span>2,018</div>
-                                    <div className="txt"><h5>Fashion T-shirt Men's Classic Color...</h5></div>
-                                </div>
-                                <span className='cl'>Free Shipping</span>
-
-                                <div className='pos-bottom'>Store</div>
-                            </div>
-                        </div>
-                        <div className="prod-card">
-                            <div className="img-con">
-                                <img src={product1} alt="products" />
-                            </div>
-                            <div className="content">
-                                <div className="wrapper">
-                                    <div className="amt"><span>NGN</span>2,018</div>
-                                    <div className="txt"><h5>Fashion T-shirt Men's Classic Color...</h5></div>
-                                </div>
-                                <span className='cl'>Free Shipping</span>
-
-                                <div className='pos-bottom'>Store</div>
-                            </div>
-                        </div>
-                        <div className="prod-card">
-                            <div className="img-con">
-                                <img src={product1} alt="products" />
-                            </div>
-                            <div className="content">
-                                <div className="wrapper">
-                                    <div className="amt"><span>NGN</span>2,018</div>
-                                    <div className="txt"><h5>Fashion T-shirt Men's Classic Color...</h5></div>
-                                </div>
-                                <span className='cl'>Free Shipping</span>
-
-                                <div className='pos-bottom'>Store</div>
-                            </div>
-                        </div>
+                            </Link>
+                        )) : (<div>Loading Product Data</div>)}
                     </div>
                     <div className="pignation">
                         <div className="buttons">

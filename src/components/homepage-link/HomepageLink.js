@@ -9,3 +9,4 @@ export const HomepageLink = () => {
         </div>
     )
 }
+export default HomepageLink

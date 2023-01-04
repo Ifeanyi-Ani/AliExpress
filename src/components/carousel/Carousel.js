@@ -26,11 +26,10 @@ import "./carousel.css"
 
 export const Carousel = () => {
     return (
+        <div className="caro-wrap">
+            <div className="carousa">
 
-        <div className="carousa">
-            Carousel Slide oo
-
-            {/* <div className="card">
+                <div className="card">
                     <div className="img">
                         <img src={carousel1} alt="img1" />
                         <div className="amt">NGN 444.72</div>
@@ -114,9 +113,9 @@ export const Carousel = () => {
                     </div>
                     <span>NGN 1,534.31</span>
                 </div>
-                <div className="prev"><IoChevronBackOutline /></div>
-                <div className="next"><IoChevronForwardOutline /></div> */}
+                <div className="slid-btn prev"><IoChevronBackOutline /></div>
+                <div className="slid-btn next"><IoChevronForwardOutline /></div>
+            </div>
         </div>
-
     )
 }

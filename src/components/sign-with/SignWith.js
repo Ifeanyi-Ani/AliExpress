@@ -3,11 +3,12 @@ import google from '../../images/google.png';
 import facebook from '../../images/facebook.png';
 import twitter from '../../images/twitter.png';
 import apple from '../../images/apple.jpg';
+import BreakSection from '../sign-with/BreakSection'
 import './signwith.css';
 const SignWith = () => {
     return (
         <div>
-            <div className='flex-line'><div className="hr"><hr /></div><div>Or continue with</div><div className="hr"><hr /></div></div>
+            <BreakSection text="Or continue with" />
             <div className='sign-with'>
                 <div className="imgcon">
                     <img src={google} alt="img" />

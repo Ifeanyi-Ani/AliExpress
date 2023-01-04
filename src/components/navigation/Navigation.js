@@ -4,8 +4,13 @@ import { IoIosHeartEmpty, IoMdPhonePortrait } from "react-icons/io"
 import flag from "../../images/flag.png"
 import { RegSignin } from "../reg_signin/Reg_Signin";
 import "./navigation.css";
+import { useContext } from "react";
+import { ContextData } from "../../context/ContextData";
+import Logout from "../Logout";
 function Navigation() {
+    const { isLoggedin, loggedUser } = useContext(ContextData);
     let bgcl1 = "#ff4747", cl1 = "#fff", rd = "none", bgcl2 = "#fff1f1", cl2 = "#ff4747"
+
     return (
         <nav>
             <ul className="nav-links">
@@ -59,8 +64,15 @@ function Navigation() {
                 <li><span><IoIosHeartEmpty /></span>Wish List</li>
                 <li className="drop-down"><span><IoPersonOutline /></span> Account <span><IoCaretDown /></span>
                     <div className="mega-menu">
-                        <span>Welcome to AliExpress</span>
-                        <RegSignin bgcl1={bgcl1} cl1={cl1} rd={rd} bgcl2={bgcl2} cl2={cl2} />
+                        {isLoggedin ? (<div className="loggedCon">
+                            <span className="logged">Welcome back, <br />{`${loggedUser[0].name}`}</span>
+                            <Logout />
+                        </div>) : (
+                            <div>
+                                <span>Welcome to AliExpress</span>
+                                <RegSignin bgcl1={bgcl1} cl1={cl1} rd={rd} bgcl2={bgcl2} cl2={cl2} />
+                            </div>
+                        )}
                         <ul>
                             <li>My Orders</li>
                             <li>My Coins</li>

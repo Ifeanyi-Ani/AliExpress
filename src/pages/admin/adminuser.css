@@ -1,0 +1,41 @@
+.table {
+  width: 98%;
+  margin: auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.header {
+  width: 98%;
+  margin: auto;
+}
+.header h2 {
+  text-transform: uppercase;
+}
+.table thead {
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: left;
+  background-color: #ff472e;
+}
+.table tr th {
+  padding: 10px 0;
+}
+.table tbody tr td {
+  font-size: 16px;
+  padding: 10px 0;
+}
+.table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 71, 46, 0.4);
+  color: rgba(0, 0, 0);
+}
+.buttonBx {
+  display: flex;
+  gap: 30px;
+}
+.buttonBx svg {
+  cursor: pointer;
+}
+.buttonBx svg:hover {
+  color: #ff472e;
+}

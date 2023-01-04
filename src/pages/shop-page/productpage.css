@@ -190,6 +190,10 @@
 .inner .space-bt .space {
   gap: 5px;
 }
+.inner .space-bt .space svg {
+  width: 20px;
+  height: 40px;
+}
 
 .prod {
   width: 80%;
