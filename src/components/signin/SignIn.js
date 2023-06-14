@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { ContextData } from '../../context/ContextData'
 import SignWith from '../sign-with/SignWith'
+import { ContextData } from '../../context/ContextData'
 import './signin.css'
 
 export const SignIn = () => {

@@ -1,5 +1,10 @@
 import React from "react";
 import { VscListUnordered } from "react-icons/vsc"
+import { TiStarFullOutline } from "react-icons/ti"
+import { GoRadioTower, GoJersey, GoGithubAction, GoDeviceCamera } from "react-icons/go"
+import { FaVenus, FaShoppingBag, FaFly, FaCottonBureau, FaDraft2Digital } from "react-icons/fa"
+import { IoLaptopOutline, IoPhonePortraitOutline } from "react-icons/io5"
+import { IoIosWoman, IoIosBaseball } from "react-icons/io";
 import { SlideData } from "../../components/slider/SlideData";
 import Slider from "../../components/slider/Slider";
 import acc from "../../images/accc.webp"
@@ -19,7 +24,8 @@ import { ContextData } from "../../context/ContextData";
 
 import "./home.css";
 function Homepage() {
-    const { isLoggedin, loggedUser } = useContext(ContextData)
+    const { isLoggedin, loggedUser, product } = useContext(ContextData);
+
     let bgcl1 = "linear-gradient(to right, #ff0e0b, #ff7137)", cl1 = "#fff", rd = "20px", bgcl2 = "#f5f5f5", cl2 = "#333"
     return (
         <div className="home-container">
@@ -29,7 +35,7 @@ function Homepage() {
                 <div className="side-nav">
                     <div className="flex"><VscListUnordered /> Categories</div>
                     <ul className="cate-items">
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Women's Fashion</div>
+                        <li className="dropDown"><div className="flex"><IoIosWoman /> Women's Fashion</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -110,7 +116,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> <Link to="/products">Men's Fashion</Link></div>
+                        <li className="dropDown"><div className="flex"><GoJersey /> <Link to="/products">Men's Fashion</Link></div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -191,7 +197,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Phones & Telecommunications</div>
+                        <li className="dropDown"><div className="flex"><IoPhonePortraitOutline /> Phones & Telecommunications</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -272,7 +278,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Computer Office & security</div>
+                        <li className="dropDown"><div className="flex"><IoLaptopOutline /> Computer Office & security</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -353,7 +359,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Consumers Electronics</div>
+                        <li className="dropDown"><div className="flex"><GoDeviceCamera /> Consumers Electronics</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -434,7 +440,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Jewelry & Watches</div>
+                        <li className="dropDown"><div className="flex"><FaFly /> Jewelry & Watches</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -515,7 +521,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Home Pets & Appliances</div>
+                        <li className="dropDown"><div className="flex"><GoGithubAction /> Home Pets & Appliances</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -596,7 +602,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Bags & Shoes</div>
+                        <li className="dropDown"><div className="flex"><FaShoppingBag /> Bags & Shoes</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -677,7 +683,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Toys Kids & Babies</div>
+                        <li className="dropDown"><div className="flex"><GoRadioTower /> Toys Kids & Babies</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -758,7 +764,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Outdoor Fun & Sports</div>
+                        <li className="dropDown"><div className="flex"><IoIosBaseball /> Outdoor Fun & Sports</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -839,7 +845,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Beauty Health & Hair</div>
+                        <li className="dropDown"><div className="flex"><FaVenus /> Beauty Health & Hair</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -920,7 +926,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Automobiles & Motorcycles</div>
+                        <li className="dropDown"><div className="flex"><FaCottonBureau /> Automobiles & Motorcycles</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -1001,7 +1007,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Tools & Home Improvement</div>
+                        <li className="dropDown"><div className="flex"><FaDraft2Digital /> Tools & Home Improvement</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -1153,57 +1159,37 @@ function Homepage() {
 
                         </div>
                         <div className="content">
-                            <div className="box">
-                                <div className="img">
-                                    <img src={miniCarousel1} alt="img" />
-                                </div>
-                                <h5>NGN 4,777</h5>
-                                <span>70352 quantity</span>
-                            </div>
-                            <div className="box">
-                                <div className="img">
-                                    <img src={miniCarousel1} alt="img" />
-                                </div>
-                                <h5>NGN 4,777</h5>
-                                <span>70352 quantity</span>
-                            </div>
-                            <div className="box">
-                                <div className="img">
-                                    <img src={miniCarousel1} alt="img" />
-                                </div>
-                                <h5>NGN 4,777</h5>
-                                <span>70352 quantity</span>
-                            </div>
-                            <div className="box">
-                                <div className="img">
-                                    <img src={miniCarousel1} alt="img" />
-                                </div>
-                                <h5>NGN 4,777</h5>
-                                <span>70352 quantity</span>
-                            </div>
-                            <div className="box">
-                                <div className="img">
-                                    <img src={miniCarousel1} alt="img" />
-                                </div>
-                                <h5>NGN 4,777</h5>
-                                <span>70352 quantity</span>
-                            </div>
-                            <div className="box">
-                                <div className="img">
-                                    <img src={miniCarousel1} alt="img" />
-                                </div>
-                                <h5>NGN 4,777</h5>
-                                <span>70352 quantity</span>
-                            </div>
+                            {product.filter((data) => data.name === "sweater").slice(0, 6).map((data) => (
+                                <Link to={`/product/${data._id}`} className="box">
+                                    <div className="img">
+                                        <img src={`http://159.65.21.42:9000${data.image}`} alt="img" />
+                                    </div>
+                                    <h5>{data.price}</h5>
+                                    <span>{data.quantity} quantity</span>
+                                </Link>
+                            ))}
                         </div>
                     </Link>
 
                     <div className="break">
-                        <BreakSection text="Feature Categories" />
+                        <BreakSection text="More to Love" />
                     </div>
-                    <div className="sec">
-                        <div className="col1">
-                            <img src={miniCarousel2} alt="img" />
+                    <div className="superD bg-default">
+                        <div className="sec content">
+                            {product.slice(0, 24).map((data) => (
+                                <Link to={`/product/${data._id}`} className="box">
+                                    <div className="img">
+                                        <img src={`http://159.65.21.42:9000${data.image}`} alt="img" />
+                                    </div>
+                                    <div className="message">
+                                        <h5 className="red-cl">NGN {data.price}</h5>
+                                        <h6 className="red-cl">Extra 2% off with coin</h6>
+                                        <span>{data.quantity * 3} sold <TiStarFullOutline /> 4.7</span>
+                                        <p className="desc">{data.description}</p>
+                                        <span className="f-shipping">Free Shipping</span>
+                                    </div>
+                                </Link>
+                            ))}
                         </div>
                     </div>
                 </div>

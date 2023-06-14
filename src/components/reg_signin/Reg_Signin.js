@@ -1,13 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { SignIn } from '../signin/SignIn';
 import SignUp from '../sign-up/SignUp';
 import { Modal } from '../modal/Modal'
-import { useState } from 'react';
-import { ContextData } from '../../context/ContextData';
 import './reg_signin.css';
 
 export const RegSignin = ({ bgcl1, cl1, bgcl2, cl2, rd }) => {
-    const { openModal, setopenModal } = useContext(ContextData)
+    // const { openModal, setopenModal } = useContext(ContextData)
+    const [openModal, setopenModal] = useState(false);
     const [active, setActive] = useState(1);
     const [login, setLogin] = useState(false);
     const [signup, setSignup] = useState(false);
@@ -23,8 +22,8 @@ export const RegSignin = ({ bgcl1, cl1, bgcl2, cl2, rd }) => {
     }
     const handleSignup = (index) => {
         setopenModal(true);
-        setLogin(false);
         setSignup(true);
+        setLogin(false);
         setActive(index);
     }
     const handleLogin = (index) => {
@@ -39,12 +38,12 @@ export const RegSignin = ({ bgcl1, cl1, bgcl2, cl2, rd }) => {
             <button style={btn1Style} onClick={() => handleSignup(2)}>Register</button>
             <button style={btn2Style} onClick={() => handleLogin(1)}>Sign in</button>
             <Modal
+                className="open-modal"
                 open={openModal}
                 active={active}
                 close={() => setopenModal(false)}
                 handleState2={() => handleLogin(1)}
                 handleState1={() => handleSignup(2)}
-                className="open-modal"
                 title1="Register"
                 title2="Sign in">
                 {login && (<SignIn />)}

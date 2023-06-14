@@ -3,10 +3,11 @@ import { IoCaretDown, IoPersonOutline } from "react-icons/io5"
 import { IoIosHeartEmpty, IoMdPhonePortrait } from "react-icons/io"
 import flag from "../../images/flag.png"
 import { RegSignin } from "../reg_signin/Reg_Signin";
-import "./navigation.css";
+
 import { useContext } from "react";
 import { ContextData } from "../../context/ContextData";
 import Logout from "../Logout";
+import "./navigation.css";
 function Navigation() {
     const { isLoggedin, loggedUser } = useContext(ContextData);
     let bgcl1 = "#ff4747", cl1 = "#fff", rd = "none", bgcl2 = "#fff1f1", cl2 = "#ff4747"
