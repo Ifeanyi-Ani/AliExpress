@@ -14,7 +14,7 @@ const AddToCartMsg = ({ handleClose }) => {
     return (
         <div className='cart-msg'>
             <span>
-                A new item has been added to your Shopping Cart. You now have {cart.length} items in your Shopping Cart.
+                A new item has been added to your shopping cart. You now have {cart.length} items in your shopping cart.
             </span>
             <div className="ctrbtn">
                 <button onClick={handleClick}>view shopping cart</button>
