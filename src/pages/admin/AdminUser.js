@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { ContextData } from '../../context/ContextData'
 import { IoTrashOutline, IoPencil } from 'react-icons/io5'
 import './adminuser.css'
@@ -8,7 +8,7 @@ const AdminUser = () => {
     const { user, getUsers } = useContext(ContextData);
     const handleUserDel = async (id, identity, callback) => {
         try {
-            const deleteUser = await fetch(`http://159.65.21.42:9000/user/${id}`, {
+            await fetch(`http://159.65.21.42:9000/user/${id}`, {
                 method: "delete",
             })
             alert(`User: ${identity}, is successfully delete`);

@@ -5,12 +5,12 @@ import { IoTrashOutline, IoPencil } from 'react-icons/io5'
 // import EditProd from '../../components/product-form/EditProd'
 
 const AdminProduct = () => {
-    const { product, getProduct, openModal, setopenModal } = useContext(ContextData)
+    const { product, getProduct } = useContext(ContextData)
 
 
     const handleProdDelete = async (id, prodName, callback) => {
         try {
-            const deleteProd = await fetch(`http://159.65.21.42:9000/product/${id}`, {
+            await fetch(`http://159.65.21.42:9000/product/${id}`, {
                 method: "delete",
             })
             alert(`${prodName} successfully Deleted`)

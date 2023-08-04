@@ -11,7 +11,7 @@ import { Banner } from "../../components/banner/Banner";
 import { SubFooter } from "../../components/subFooter/SubFooter";
 import { Link } from "react-router-dom";
 import { Header } from "../../components/header/Header";
-import { IoReaderOutline, IoChatboxEllipsesOutline } from 'react-icons/io5'
+import { IoReaderOutline, IoChatboxEllipsesOutline, IoPersonSharp } from 'react-icons/io5'
 
 import BreakSection from "../../components/sign-with/BreakSection";
 import { useContext } from "react";
@@ -29,7 +29,7 @@ function Homepage() {
                 <div className="side-nav">
                     <div className="flex"><VscListUnordered /> Categories</div>
                     <ul className="cate-items">
-                        <li className="dropDown"><div className="flex"><VscListUnordered /> Women's Fashion</div>
+                        {/* <li className="dropDown"><div className="flex"><VscListUnordered /> Women's Fashion</div>
                             <div className="mega-menu">
                                 <div>
                                     <ul>
@@ -1081,6 +1081,9 @@ function Homepage() {
                                     images
                                 </div>
                             </div>
+                        </li> */}
+                        <li className="dropDown"><div className="flex"><IoPersonSharp /> <Link to="/products">Men's Fashion</Link></div>
+
                         </li>
                     </ul>
                 </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import product1 from '../../images/product1.webp';
 import { IoHeartOutline, IoTrashOutline } from 'react-icons/io5';
 import { QuantityBtn } from '../../components/quantity_cont/QuantityBtn';
 import { HiOutlineShieldCheck } from 'react-icons/hi2';

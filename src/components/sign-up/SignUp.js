@@ -22,7 +22,7 @@ const SignUp = () => {
         }
 
         try {
-            const postUser = await fetch("http://159.65.21.42:9000/register", {
+            await fetch("http://159.65.21.42:9000/register", {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json'

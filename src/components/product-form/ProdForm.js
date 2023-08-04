@@ -29,7 +29,7 @@ const ProdForm = () => {
         formData.append("image", prodForm.image);
 
         try {
-            const postResult = await fetch("http://159.65.21.42:9000/create/product", {
+             await fetch("http://159.65.21.42:9000/create/product", {
                 method: "post",
                 body: formData
             })

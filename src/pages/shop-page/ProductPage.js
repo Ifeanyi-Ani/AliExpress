@@ -4,7 +4,6 @@ import { TiStarFullOutline, TiStarOutline } from 'react-icons/ti';
 // import CardProd from '../../components/card-prod/CardProd';
 import { useContext } from 'react';
 import { ContextData } from '../../context/ContextData';
-import product1 from '../../images/product1.webp';
 import { HomepageLink } from '../../components/homepage-link/HomepageLink';
 import { CartpageLink } from '../../components/cartpage-link/CartpageLink';
 import { IoSearch, } from 'react-icons/io5';
@@ -18,6 +17,34 @@ const ProductPage = () => {
     const handleState = (index) => {
         setToggle(index);
     }
+    const productsPerPage = 4; // Number of products to show per page
+    const totalPages = Math.ceil(product.length / productsPerPage);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    // Function to get the products for the current page
+    const getProductsForCurrentPage = () => {
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = startIndex + productsPerPage;
+        return [...product].reverse().slice(startIndex, endIndex);
+    };
+
+    // Function to handle pagination button clicks
+    const handlePaginationClick = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+    // Function to handle "Previous" button click
+    const handlePreviousClick = () => {
+        if (currentPage > 1) {
+            setCurrentPage((prevPage) => prevPage - 1);
+        }
+    };
+
+    // Function to handle "Next" button click
+    const handleNextClick = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage((prevPage) => prevPage + 1);
+        }
+    };
     return (
         <div className='product-container'>
             <div className='header'>
@@ -149,7 +176,7 @@ const ProductPage = () => {
                     </div>
                     <div className={`prod ${toggle === 1 ? 'prod-grid' : 'prod-flex'}`}>
 
-                        {product.length ? [...product].reverse().map((data, idx) => (
+                        {product ? getProductsForCurrentPage().map((data, idx) => (
                             <Link to={`/product/${data._id}`} className="prod-card" key={idx}>
                                 <div className="img-con">
                                     <img src={`http://159.65.21.42:9000${data.image}`} alt="products" />
@@ -168,21 +195,28 @@ const ProductPage = () => {
                     </div>
                     <div className="pignation">
                         <div className="buttons">
-                            <button><IoChevronBackOutline /> Previous</button>
-                            <button className='btn-active'>1</button>
-                            <button>2</button>
-                            <button>3</button>
-                            <button>4</button>
-                            <button>5</button>
-                            <button>6</button>
-                            <button>7</button>
-                            <button>Next <IoChevronForwardOutline /></button>
+                            <button onClick={handlePreviousClick}>
+                                <IoChevronBackOutline /> Previous
+                            </button>
+                            {/* Display pagination buttons */}
+                            {[...Array(totalPages).keys()].map((pageNumber) => (
+                                <button
+                                    key={pageNumber}
+                                    className={currentPage === pageNumber + 1 ? 'btn-active' : ''}
+                                    onClick={() => handlePaginationClick(pageNumber + 1)}
+                                >
+                                    {pageNumber + 1}
+                                </button>
+                            ))}
+                            <button onClick={handleNextClick}>
+                                Next <IoChevronForwardOutline />
+                            </button>
                         </div>
-                        <div className="search">
+                        {/* <div className="search">
                             <span>Go to Page</span>
                             <input type="number" />
                             <button>Go</button>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className="rank">
