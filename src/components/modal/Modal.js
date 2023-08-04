@@ -8,7 +8,7 @@ export const Modal = ({ open, children, close, handleState1, handleState2, activ
 
     return ReactDOM.createPortal(
         <div className="overlay">
-            <div className='modal'>
+            <div className='modal open-modal'>
                 <div className='button'><IoClose onClick={close} role="button" /></div>
                 <div className='navigate'>
                     <button className={`${active === 2 ? 'active' : " "} `} onClick={handleState1}>{title1}</button>

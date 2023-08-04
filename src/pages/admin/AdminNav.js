@@ -2,13 +2,13 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import HomepageLink from '../../components/homepage-link/HomepageLink';
 import { useState } from 'react';
-import SignUp from '../../components/sign-up/SignUp';
-import { Modal } from '../../components/modal/Modal';
-import ProdForm from '../../components/product-form/ProdForm';
-import './adminnav.css';
 import { useContext } from 'react';
 import { ContextData } from '../../context/ContextData';
+import { Modal } from '../../components/modal/Modal';
+import ProdForm from '../../components/product-form/ProdForm';
+import SignUp from '../../components/sign-up/SignUp';
 import { SignIn } from '../../components/signin/SignIn';
+import './adminnav.css';
 const AdminNav = () => {
     const { checkAdmin, openModal, setopenModal } = useContext(ContextData);
     const [productForm, setProductForm] = useState(false)
@@ -47,7 +47,7 @@ const AdminNav = () => {
                                 title1="Product"
                                 title2="User"
                                 active={isActive}
-                                className="open-modal">
+                            >
                                 {productForm && (<ProdForm />)}
                                 {userForm && (<SignUp />)}
                             </Modal>

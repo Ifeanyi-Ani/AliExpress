@@ -3,7 +3,6 @@ import { VscListUnordered } from "react-icons/vsc"
 import { SlideData } from "../../components/slider/SlideData";
 import Slider from "../../components/slider/Slider";
 import acc from "../../images/accc.webp"
-import { RegSignin } from "../../components/reg_signin/Reg_Signin";
 import miniCarousel1 from "../../images/miniCarousel1.webp";
 import miniCarousel2 from "../../images/miniCarousel2.webp";
 import superD from '../../images/superD.webp'
@@ -17,6 +16,7 @@ import BreakSection from "../../components/sign-with/BreakSection";
 import { useContext } from "react";
 import { ContextData } from "../../context/ContextData";
 
+import { RegSignin } from "../../components/reg_signin/Reg_Signin";
 import "./home.css";
 function Homepage() {
     const { isLoggedin, loggedUser } = useContext(ContextData)

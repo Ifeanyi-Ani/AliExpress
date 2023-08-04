@@ -19,7 +19,7 @@ export const SignIn = () => {
         if (!loginDx.email || !loginDx.password) {
             return setCheck(true)
         }
-        if (loginDx.email === "admin" && loginDx.password === "admin") {
+        if (loginDx.email === "admin@gmail.com" && loginDx.password === "admin") {
             setCheckAdmin(true);
             loggedHistory("/admin")
 

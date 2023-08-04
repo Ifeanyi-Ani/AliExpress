@@ -4,9 +4,10 @@ import { ContextData } from '../context/ContextData'
 import { useNavigate } from 'react-router-dom'
 const Logout = () => {
     const history = useNavigate()
-    const { setisLoggedin } = useContext(ContextData);
+    const { setisLoggedin, setCheckAdmin } = useContext(ContextData);
     const handleLogout = () => {
         setisLoggedin(false)
+        setCheckAdmin(false)
         localStorage.removeItem('Loggedin')
         history("/")
     }

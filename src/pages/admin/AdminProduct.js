@@ -51,7 +51,7 @@ const AdminProduct = () => {
                             handleState1={() => handleEditProduct(2)}
                             title1="Update Product"
                             active={2}
-                            className="open-modal">
+                            >
                             <EditProd handleEditProduct={handleEditProduct()} />
                         </Modal> */}
                     </div>

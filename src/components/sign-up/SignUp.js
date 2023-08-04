@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, } from 'react-router-dom';
 import { useState, useContext } from 'react';
+import { ContextData } from '../../context/ContextData';
 import SignWith from '../sign-with/SignWith';
 import './signup.css';
-import { ContextData } from '../../context/ContextData';
 
 const SignUp = () => {
     const { getUsers, setopenModal } = useContext(ContextData);

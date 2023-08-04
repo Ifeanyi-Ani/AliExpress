@@ -10,11 +10,11 @@ import { HomepageLink } from '../../components/homepage-link/HomepageLink';
 import { CartpageLink } from '../../components/cartpage-link/CartpageLink';
 import { IoSearch, } from 'react-icons/io5';
 
-import './cartview.css';
 import { useContext } from 'react';
 import { ContextData } from '../../context/ContextData';
 import { useState } from 'react';
 import Modal from '../../components/modal/Modal';
+import './cartview.css';
 
 const CartView = () => {
     const { cart, increaseCartQty, decreaseCartQty, deleteCartItem, GrandTotalPrice } = useContext(ContextData);
@@ -84,7 +84,7 @@ const CartView = () => {
                                         <Modal
                                             open={openModal}
                                             close={() => setopenModal(false)}
-                                            className="open-modal"
+
                                         >
                                             <div className='cart-msg xenter'>
                                                 <h4>Remove Product</h4>

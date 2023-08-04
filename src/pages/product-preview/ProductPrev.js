@@ -4,17 +4,17 @@ import { QuantityBtn } from '../../components/quantity_cont/QuantityBtn';
 import { HomepageLink } from '../../components/homepage-link/HomepageLink';
 import { CartpageLink } from '../../components/cartpage-link/CartpageLink';
 import { IoCaretDown } from 'react-icons/io5';
-import { Link, useParams } from 'react-router-dom';
-import Modal from '../../components/modal/Modal'
-import './productprev.css';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { useContext } from 'react';
 import { ContextData } from '../../context/ContextData';
+import { Link, useParams } from 'react-router-dom';
+import Modal from '../../components/modal/Modal'
+import { useState } from 'react';
+import { useEffect } from 'react';
 import AddToCartMsg from '../../components/addToCartMsg/AddToCartMsg';
+import './productprev.css';
 const ProductPrev = () => {
-    const { addToCart, product } = useContext(ContextData);
-    const [openModal, setopenModal] = useState(false)
+    const { addToCart, product, setopenModal, openModal } = useContext(ContextData);
+    // const [openModal, setopenModal] = useState(false)
     const [singlePrd, setSinglePrd] = useState({})
     const { id } = useParams();
     const getSingleProduct = async () => {
@@ -148,7 +148,7 @@ const ProductPrev = () => {
                             <Modal
                                 open={openModal}
                                 close={() => setopenModal(false)}
-                                className="open-modal"
+
                             >
                                 <AddToCartMsg handleClose={() => setopenModal(false)} />
                             </Modal>
