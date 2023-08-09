@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/AliExpress/static/css/main.661a5cb0.css",
+    "main.js": "/AliExpress/static/js/main.b4df2a6e.js",
+    "static/media/slide4.webp": "/AliExpress/static/media/slide4.e1499e4060180d266385.webp",
+    "static/media/slide3.webp": "/AliExpress/static/media/slide3.cda3c3369c5a34a6d533.webp",
+    "static/media/slide2.webp": "/AliExpress/static/media/slide2.40053a89711bc028140b.webp",
+    "static/media/slide8.webp": "/AliExpress/static/media/slide8.f145f87a21822478ac82.webp",
+    "static/media/slide6.webp": "/AliExpress/static/media/slide6.4ceebaa2581218dea4ba.webp",
+    "static/media/slide5.webp": "/AliExpress/static/media/slide5.1dda5180a8c956aa704a.webp",
+    "static/media/slide7.webp": "/AliExpress/static/media/slide7.604acc623e02af5c3aac.webp",
+    "static/media/slide1.webp": "/AliExpress/static/media/slide1.40297f9c3a58e225ecc7.webp",
+    "static/media/account-bg2.webp": "/AliExpress/static/media/account-bg2.7d076f2223be5528187a.webp",
+    "static/media/carousel7.webp": "/AliExpress/static/media/carousel7.9f1db9bc0d16925fa48c.webp",
+    "static/media/carousel4.webp": "/AliExpress/static/media/carousel4.e489aba77e96cfd54dad.webp",
+    "static/media/carousel9.webp": "/AliExpress/static/media/carousel9.5274dd56c8ec8faba900.webp",
+    "static/media/carousel10.webp": "/AliExpress/static/media/carousel10.85c50404705c23a6fb0f.webp",
+    "static/media/carousel8.webp": "/AliExpress/static/media/carousel8.4d4a2632c08376c24ec3.webp",
+    "static/media/carousel11.webp": "/AliExpress/static/media/carousel11.5b060d78afc4df6dfeaf.webp",
+    "static/media/miniCarousel2.webp": "/AliExpress/static/media/miniCarousel2.1299187835e6007915db.webp",
+    "static/media/carousel6.webp": "/AliExpress/static/media/carousel6.81f93805b534d3091cc0.webp",
+    "static/media/carousel5.webp": "/AliExpress/static/media/carousel5.b44605a6d9556c961304.webp",
+    "static/media/carousel2.webp": "/AliExpress/static/media/carousel2.c14603cec792e7f73fa4.webp",
+    "static/media/superD.webp": "/AliExpress/static/media/superD.48bb79601d7bbae72f87.webp",
+    "static/media/carousel12.webp": "/AliExpress/static/media/carousel12.275ec738e1b295ebb542.webp",
+    "static/media/carousel3.webp": "/AliExpress/static/media/carousel3.1ef047484bd34d586849.webp",
+    "static/media/carousel1.webp": "/AliExpress/static/media/carousel1.bc664f61338ec50ea758.webp",
+    "static/media/miniCarousel1.webp": "/AliExpress/static/media/miniCarousel1.ff92992fa8d8de4cf535.webp",
+    "static/media/accc.webp": "/AliExpress/static/media/accc.f598557eb2ce196050a2.webp",
+    "static/media/banner.webp": "/AliExpress/static/media/banner.d00984ee820205d96cd0.webp",
+    "static/media/account-bg.webp": "/AliExpress/static/media/account-bg.42fc857a59d1df89b86d.webp",
+    "index.html": "/AliExpress/index.html",
+    "main.661a5cb0.css.map": "/AliExpress/static/css/main.661a5cb0.css.map",
+    "main.b4df2a6e.js.map": "/AliExpress/static/js/main.b4df2a6e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.661a5cb0.css",
+    "static/js/main.b4df2a6e.js"
+  ]
+}
