@@ -1,5 +1,3 @@
-Sure, here's a sample README.md for your Alixpress replica project:
-
 # Alixpress - E-commerce Web Application
 
 Alixpress is an e-commerce web application built with React.js that allows users to register, sign in, view products, add products to the cart, remove products from the cart, and provides admin users with a dashboard to manage products and users.
