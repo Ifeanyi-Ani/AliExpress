@@ -104,7 +104,7 @@
   align-items: center;
   flex-wrap: nowrap;
 }
-.inner .main .inner .flex .col input[type="number"] {
+.inner .main .inner .flex .col input[type='number'] {
   width: 50px;
   height: 30px;
   padding-left: 5px;
@@ -150,6 +150,9 @@
   margin-right: 10px;
   width: 25px;
   height: 15px;
+  cursor: pointer;
+}
+.inner .flex .space svg {
   cursor: pointer;
 }
 .inner .flex .space svg.active {
@@ -291,11 +294,13 @@
   display: flex;
   gap: 5px;
 }
+
 .pignation button {
   padding: 10px;
   background-color: #fff;
   outline: none;
   border: 1px solid gainsboro;
+  cursor: pointer;
   /* border: none; */
 }
 .pignation .search {
